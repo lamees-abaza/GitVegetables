@@ -1,0 +1,337 @@
+/**********************
+01. =google fonts
+----------------------*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+/*********************
+02. =variables
+--------------------*/
+
+:root {
+    --orange: hsl(36, 80%, 50%);
+    --white: hsl(0, 0, 100%);
+    --WHITE: hsl(0, 0, 100%);
+    --Black: hsl(0, 0, 0);
+    --Black-90: hsl(0, 0, 10%);
+    --Black-70: hsl(0, 0, 30%);
+    --Black-alpha-40: hsla(0, 0, 0, .4);
+    --yellow-light: hsl(44, 68%, 83%);
+    --green-light: hsl(158, 80%, 75%);
+    --red-light: hsl(0, 84%, 80%);
+    --orange-light: hsl(22, 85%, 80%);
+    --select-box-bg-color: hsl(0, 0, 100%);
+    --border-color-1: hsl(0, 0, 90%);
+}
+
+
+/*******************
+03. =overrides variables for - theme dark
+-------------------*/
+
+
+/******************
+04. =base
+------------------*/
+
+body {
+    background-color: var(--body-bg-color);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--Black-70);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--main-color);
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+::selection {
+    color: var(--WHITE);
+    background-color: var(--main-color);
+}
+
+
+/*****************
+06. =customized bootstrap classes
+-----------------*/
+
+.container {
+    --bs-gutter-x: 15px;
+    max-width: 1140px;
+}
+
+
+/**************
+19. =header 
+--------------*/
+
+.header {
+    border-bottom: 1px solid var(--border-color-2);
+}
+
+.header-logo a {
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--Black-70);
+}
+
+.header-logo span {
+    color: var(--main-color);
+}
+
+.header .menu-item {
+    display: inline-block;
+    margin-left: 40px;
+    position: relative;
+}
+
+.header .menu-item>a {
+    display: block;
+    padding: 24px 0;
+    font-weight: 400;
+    color: var(--Black-90);
+    text-transform: capitalize;
+    transition: color 0.3s ease;
+}
+
+.header .sub-menu-item a:hover,
+.header .menu-item:hover>a {
+    color: var(--main-color);
+}
+
+.header .menu-item>a i {
+    font-size: 13px;
+    margin-left: 3px;
+    pointer-events: none;
+}
+
+.header .sub-menu {
+    position: absolute;
+    top: 100%;
+    background-color: var(--red-light);
+    left: 0;
+    width: 210px;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    z-index: 2;
+    visibility: visible;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+@media(min-width:992px) {
+    .header .menu-item:hover>.sub-menu {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header .sub-menu-item a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--black-90);
+    text-transform: capitalize;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.header-backdrop,
+.header-close-btn,
+.header-humburger-btn {
+    display: none;
+}
+
+
+/***************
+21. =banner section
+----------------*/
+
+.banner-section {
+    background-color: var(--main-color);
+    padding: 80px;
+    border-style: solid;
+}
+
+.rounded-circle {
+    border-style: solid;
+}
+
+.banner-text {
+    padding-top: 100px;
+}
+
+.btn {
+    background-color: white;
+}
+
+
+/***************
+24. =testimonial section---------------*/
+
+.block {
+    background: #fff;
+    color: #333;
+    padding: 60px;
+    margin: 50px 50px;
+    box-shadow: 0 5px 30px -5px rgba(0, 0, 0, .15);
+    -webkit-box-shadow: 0 5px 30px -5px rgba(0, 0, 0, .15);
+}
+
+.block .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    place-items: normal;
+}
+
+.user {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.image {
+    position: relative;
+    margin: 0 15px 30px 15px;
+}
+
+.image img {
+    height: 170px;
+    width: 170px;
+    border: 7px solid #ffdfb8;
+    border-radius: 170px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+}
+
+.user-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.user-name::after {
+    content: "";
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 25px);
+    background: #FCA737;
+}
+
+.content {
+    text-align: center;
+    font-size: 18px;
+}
+
+.carousel-control-prev {
+    left: -50px;
+}
+
+.carousel-control-next {
+    right: -50px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 40px;
+    height: 40px;
+}
+
+
+/*------------------
+products
+-------------------*/
+
+.product-item {
+    border: 1px solid;
+    box-shadow: 0 5px 30px -5px rgba(0, 0, 0, .9);
+}
+
+.product-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.btns {
+    padding-top: 20px;
+}
+
+.btns button:hover {
+    color: var(--border-color-2);
+    background-color: #333;
+    position: relative;
+}
+
+.product-img:hover .btns {
+    bottom: 0;
+}
+
+.product-type {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.product-name {
+    transition: all 0.7s ease-in-out;
+}
+
+.product-name:hover {
+    color: #fcb941!important;
+}
+
+.product-price {
+    color: #fcb941;
+}
+
+.rating {
+    font-size: 13px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
